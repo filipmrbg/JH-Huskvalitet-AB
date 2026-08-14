@@ -25,8 +25,8 @@ const container: React.CSSProperties = {
 
 export default function Home() {
   usePageTitle(
-    'JH Huskvalitet AB | Entreprenad och Huskvalitet – Uppland',
-    'Vi på JH Huskvalitet AB utför alla typer av entreprenad-, mark-, bygg- och anläggningsarbeten i Uppland med omnejd. Kontakta oss för en kostnadsfri offert!'
+    'JH Huskvalitet AB | Bygg och Huskvalitet i Uppland',
+    'JH Huskvalitet AB utför småhusbyggnation, renovering, ombyggnation och totalentreprenad i Uppland med omnejd. Kontakta oss för en kostnadsfri offert!'
   );
 
   const heroBgRef = useRef<HTMLDivElement>(null);
