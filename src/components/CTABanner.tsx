@@ -67,22 +67,13 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
     }}>
       {/* Background Video */}
       <video
-        ref={(el) => {
-          videoRef.current = el;
-          if (el) {
-            el.muted = true;
-            el.defaultMuted = true;
-            el.playsInline = true;
-          }
-        }}
+        ref={videoRef}
         src="/cta-background-video.mp4"
         preload="auto"
         autoPlay
         loop
         muted
         playsInline
-        // @ts-expect-error webkit-playsinline is required for older iOS devices
-        webkit-playsinline="true"
         style={{
           position: 'absolute',
           inset: 0,

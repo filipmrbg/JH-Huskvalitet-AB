@@ -25,13 +25,16 @@ export interface ImageSlot {
 
 export interface SiteImages {
   logo: ImageSlot;
+  logoDark?: ImageSlot;
   hero: {
     background: ImageSlot;
   };
   services: {
-    markarbete: ImageSlot;
-    dranering: ImageSlot;
-    betong: ImageSlot;
+    smahusbyggnation?: ImageSlot;
+    renovering?: ImageSlot;
+    ombyggnation?: ImageSlot;
+    totalentreprenad?: ImageSlot;
+    [key: string]: ImageSlot | undefined;
   };
   gallery: ImageSlot[];
   cta: {
@@ -70,8 +73,12 @@ export interface SiteImages {
 
 const images: SiteImages = {
   logo: {
-    url: '/logo-transparent.png',
-    alt: 'Hagmarkers Entreprenad AB',
+    url: '/logo-white.png',
+    alt: 'JH Huskvalitet AB',
+  },
+  logoDark: {
+    url: '/logo.jpg',
+    alt: 'JH Huskvalitet AB',
   },
 
   hero: {
@@ -82,31 +89,35 @@ const images: SiteImages = {
   },
 
   services: {
-    markarbete: {
-      url: '/service-markarbete.webp',
-      alt: 'Grävmaskin som utför markarbete på tomt',
+    smahusbyggnation: {
+      url: '/service-smahusbyggnation.webp',
+      alt: 'Småhusbyggnation och nybyggnation av trähus i Uppland',
     },
-    dranering: {
-      url: '/service-dranering.webp',
-      alt: 'Husgrund med nylagd dränering och isolering',
+    renovering: {
+      url: '/service-renovering.webp',
+      alt: 'Husrenovering och golvläggning',
     },
-    betong: {
-      url: '/service-betong.webp',
-      alt: 'Nygjuten betongplatta till husgrund med formar',
+    ombyggnation: {
+      url: '/service-ombyggnation.webp',
+      alt: 'Ombyggnation och tillbyggnad på villa',
+    },
+    totalentreprenad: {
+      url: '/service-totalentreprenad.webp',
+      alt: 'Totalentreprenad och aktiv byggarbetsplats',
     },
   },
 
   gallery: [
-    { url: '/gallery-external-1.webp', alt: 'Hagmarkers Entreprenad AB arbete pågår 1' },
-    { url: '/gallery-external-2.webp', alt: 'Hagmarkers Entreprenad AB arbete pågår 2' },
-    { url: '/gallery-external-4.webp', alt: 'Hagmarkers Entreprenad AB arbete pågår 4' },
-    { url: '/gallery-external-3.webp', alt: 'Hagmarkers Entreprenad AB arbete pågår 5' },
+    { url: '/gallery-external-1.webp', alt: 'JH Huskvalitet AB arbete pågår 1' },
+    { url: '/gallery-external-2.webp', alt: 'JH Huskvalitet AB arbete pågår 2' },
+    { url: '/gallery-external-4.webp', alt: 'JH Huskvalitet AB arbete pågår 4' },
+    { url: '/gallery-external-3.webp', alt: 'JH Huskvalitet AB arbete pågår 5' },
   ],
 
   cta: {
     banner: {
       url: '/hero-main.webp',
-      alt: 'Hagmarkers Entreprenad projekt',
+      alt: 'JH Huskvalitet AB projekt',
     },
     midSection: {
       url: '/hero-main.webp',
@@ -116,11 +127,11 @@ const images: SiteImages = {
 
   about: {
     hero: {
-      url: '/logo-transparent.png',
-      alt: 'Hagmarkers Entreprenad AB logotyp',
+      url: '/logo-dark.png',
+      alt: 'JH Huskvalitet AB logotyp',
     },
     teamMember: {
-      url: '/logo-transparent.png',
+      url: '/logo-white.png',
       alt: 'Teammedlem',
     },
   },
@@ -137,22 +148,22 @@ const images: SiteImages = {
 
   portfolio: [
     {
-      image: { url: '/gallery-external-1.webp', alt: 'Hagmarkers Entreprenad AB projekt 1' },
+      image: { url: '/gallery-external-1.webp', alt: 'JH Huskvalitet AB projekt 1' },
       title: 'Projekt 1',
       category: '',
     },
     {
-      image: { url: '/gallery-external-2.webp', alt: 'Hagmarkers Entreprenad AB projekt 2' },
+      image: { url: '/gallery-external-2.webp', alt: 'JH Huskvalitet AB projekt 2' },
       title: 'Projekt 2',
       category: '',
     },
     {
-      image: { url: '/gallery-external-4.webp', alt: 'Hagmarkers Entreprenad AB projekt 4' },
+      image: { url: '/gallery-external-4.webp', alt: 'JH Huskvalitet AB projekt 4' },
       title: 'Projekt 4',
       category: '',
     },
     {
-      image: { url: '/gallery-external-3.webp', alt: 'Hagmarkers Entreprenad AB projekt 5' },
+      image: { url: '/gallery-external-3.webp', alt: 'JH Huskvalitet AB projekt 5' },
       title: 'Projekt 5',
       category: '',
     },

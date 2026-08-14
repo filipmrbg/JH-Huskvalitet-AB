@@ -21,35 +21,16 @@ const accentLine: React.CSSProperties = {
 
 const teamMembers = [
   {
-    role: 'Ägare och Grundare',
-    name: 'Olle Hagmarker',
+    role: 'Ägare & Grundare',
+    name: 'Viktor Johannesson',
     photo: '',
-  },
-];
-
-const pillars = [
-  {
-    title: 'Mångårig Erfarenhet',
-    desc: 'Med samlad expertis inom allt från stenyta och murar till omfattande dränerings- och markanläggningar.',
-  },
-  {
-    title: 'Personligt Bemötande',
-    desc: 'Ett engagerat företag där vi brinner för utemiljöer, skapande och noggrant hantverk.',
-  },
-  {
-    title: 'Skräddarsydda Lösningar',
-    desc: 'Vi tar fram en välbalanserad plan för utseende, ändamål och genomförande anpassat efter dina önskemål.',
-  },
-  {
-    title: 'Kompletta Helhetslösningar',
-    desc: 'Från underjordisk dränering och V/A till lummiga utemiljöer, stenläggning, trappor och trall.',
   },
 ];
 
 export default function About() {
   usePageTitle(
-    'Om Hagmarkers Entreprenad AB | Vår Historia och Vision',
-    'Läs om Hagmarkers Entreprenad AB. Vi är ditt lokala entreprenadföretag i Jönköping med omnejd för murar, dränering och trädgårdsanläggning.'
+    'Om JH Huskvalitet AB | Vår Historia och Vision',
+    'Läs om JH Huskvalitet AB. Vi är ditt lokala företag i Uppland med omnejd för mark, bygg och tomtanläggning.'
   );
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -75,12 +56,12 @@ export default function About() {
                 margin: '0 0 16px 0',
                 lineHeight: 1.15,
               }}>
-                Om Hagmarkers Entreprenad AB
+                Om JH Huskvalitet AB
               </h1>
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', margin: '0 auto', maxWidth: '600px' }}>
-                Med passion för skapande och trädgårdsdrömmar – Med Jönköping som hemmaplan.
+                Med passion för kvalitet och hantverk – Med Uppland som hemmaplan.
               </p>
             </ScrollReveal>
           </div>
@@ -144,11 +125,11 @@ export default function About() {
                     margin: '0 0 18px 0',
                     fontWeight: 500,
                   }}>
-                    Hos oss på Hagmarkers Entreprenad AB finns det utrymme för alla visioner och behov! Vi hjälper dig att förverkliga dina drömmar för utemiljön — oavsett om det gäller ståtliga murar, dränering, stensättning eller kompletta tomtanläggningar.
+                    JH Huskvalitet AB erbjuder byggtjänster med fokus på kvalitet, noggrannhet och hållbara lösningar. Vi hjälper dig från idé till färdigt resultat med trygghet, struktur och yrkesstolthet i varje steg.
                   </p>
                   
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-text-dark)', margin: '28px 0 12px 0' }}>
-                    Professionellt hantverk och personligt bemötande
+                    Kvalitet, noggrannhet och hållbara lösningar
                   </h3>
                   <p style={{
                     color: 'var(--color-gray-600)',
@@ -156,24 +137,15 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 16px 0',
                   }}>
-                    Resan började med en passion för markarbeten och anläggning. Företagarlivet passade som handen i handsken, där känslan för skapande får leva ut till fullo i mötet med fantastiska människor och roliga idéer.
+                    Vi utför ett brett utbud av bygg- och entreprenadtjänster med utgångspunkt i Uppland. Oavsett om det gäller renovering, tillbyggnad, anläggning eller nybyggnation ser vi till att projektet genomförs smidigt och med högsta standard.
                   </p>
-                  <p style={{
-                    color: 'var(--color-gray-600)',
-                    fontSize: '0.98rem',
-                    lineHeight: 1.8,
-                    margin: '0 0 16px 0',
-                  }}>
-                    Verksamheten drivs under namnet <strong>Hagmarkers Entreprenad AB</strong> med utgångspunkt i Jönköping.
-                  </p>
-
                   <p style={{
                     color: 'var(--color-gray-600)',
                     fontSize: '0.98rem',
                     lineHeight: 1.8,
                     margin: '0 0 24px 0',
                   }}>
-                    Vi utför allt inom markentreprenad. Under ett och samma tak levererar vi helhetslösningar för alla typer av mark-, schakt-, grundläggnings- och anläggningsarbeten. För oss är inget projekt för litet eller för stort!
+                    Under ett och samma tak levererar vi helhetslösningar anpassade efter dina behov och önskemål. För oss är inget projekt för litet eller för stort!
                   </p>
 
                   {/* Founder Quote Card */}
@@ -200,7 +172,7 @@ export default function About() {
                       fontSize: '0.9rem',
                       display: 'block',
                     }}>
-                      — Olle Hagmarker, Ägare och Grundare
+                      — Viktor Johannesson, Ägare & Grundare
                     </span>
                   </div>
 
@@ -229,7 +201,7 @@ export default function About() {
                 fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
                 margin: '0 0 14px 0',
               }}>
-                Grundare och Ägare
+                Grundare & Ägare
               </h2>
             </ScrollReveal>
             <ScrollReveal animation="scale-x-center" delay={200} duration={0.6}>
@@ -243,7 +215,7 @@ export default function About() {
                 maxWidth: '560px',
                 margin: '0 auto',
               }}>
-                Hagmarkers Entreprenad AB drivs av Olle Hagmarker med utgångspunkt i Jönköping.
+                JH Huskvalitet AB grundades och drivs av Viktor Johannesson med passion för byggkvalitet och personlig service.
               </p>
             </ScrollReveal>
           </div>
@@ -277,7 +249,7 @@ export default function About() {
                       fontWeight: 800,
                       margin: '0 auto 16px auto',
                     }}>
-                      O
+                      V
                     </div>
                     <h3 style={{
                       color: 'var(--color-text-dark)',

@@ -3,14 +3,15 @@ import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import images from '../data/images';
 
 const serviceLinks = [
-  { label: 'Markarbete och Schaktning', href: '/tjanster/markarbete' },
-  { label: 'Dränering och Fuktskydd', href: '/tjanster/dranering' },
-  { label: 'Betong och Grundläggning', href: '/tjanster/betong' },
+  { label: 'Småhusbyggnation', href: '/tjanster/smahusbyggnation' },
+  { label: 'Renovering', href: '/tjanster/renovering' },
+  { label: 'Ombyggnation', href: '/tjanster/ombyggnation' },
+  { label: 'Totalentreprenad', href: '/tjanster/totalentreprenad' },
 ];
 
 const socialIcons = [
-  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/hagmarkersentreprenadab/' },
-  { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/hagmarkersentreprenadAB/photos?locale=sv_SE' },
+  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/jhhuskvalitetab' },
+  { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61587212942833#' },
 ];
 
 export default function Footer() {
@@ -42,10 +43,10 @@ export default function Footer() {
                   display: 'inline-block',
                 }}>
                   <img
-                    src={images.logo.url}
-                    alt={images.logo.alt}
+                    src={images.logoDark?.url || '/logo.jpg'}
+                    alt={images.logoDark?.alt || images.logo.alt}
                     style={{
-                      height: '66px',
+                      height: '75px',
                       width: 'auto',
                       display: 'block',
                       objectFit: 'contain',
@@ -55,7 +56,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ color: 'var(--color-gray-600)', fontSize: '0.9rem', lineHeight: 1.7, margin: '0 0 20px 0' }}>
-              Professionellt entreprenadföretag med Jönköping som utgångspunkt. Vi utför alla typer av entreprenad- och markarbeten med stor precision.
+              Professionellt entreprenadföretag med Uppland som utgångspunkt. Vi utför alla typer av entreprenad- och byggarbeten med stor precision.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {socialIcons.map(({ Icon, label, href }) => (
@@ -128,23 +129,23 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.95rem' }}>
 
               <a
-                href="mailto:ollehagmarker@icloud.com"
+                href="mailto:JHHuskvalitet@outlook.com"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Mail size={16} strokeWidth={2} />
                 </div>
-                <span>ollehagmarker@icloud.com</span>
+                <span>JHHuskvalitet@outlook.com</span>
               </a>
 
               <a
-                href="tel:0726441723"
+                href="tel:0722101075"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Phone size={16} strokeWidth={2} />
                 </div>
-                <span>072-644 17 23</span>
+                <span>072-210 10 75</span>
               </a>
 
               <div
@@ -153,7 +154,7 @@ export default function Footer() {
                 <div className="footer-contact-icon">
                   <MapPin size={16} strokeWidth={2} />
                 </div>
-                <span>Jönköping som utgångspunkt</span>
+                <span>Uppland som utgångspunkt</span>
               </div>
             </div>
           </div>
@@ -175,7 +176,7 @@ export default function Footer() {
           }}
         >
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', color: 'var(--color-gray-600)', fontSize: '0.875rem', flexWrap: 'wrap' }}>
-            <span>© 2026 - Hagmarkers Entreprenad AB</span>
+            <span>© 2026 - JH Huskvalitet AB</span>
           </div>
         </div>
       </div>

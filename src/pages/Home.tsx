@@ -15,7 +15,6 @@ import ReviewCard from '../components/ReviewCard';
 import SocialBanner from '../components/SocialBanner';
 import CallModal from '../components/CallModal';
 import { usePageTitle } from '../hooks/usePageTitle';
-import images from '../data/images';
 import services, { ServiceItem } from '../data/services';
 
 const container: React.CSSProperties = {
@@ -26,8 +25,8 @@ const container: React.CSSProperties = {
 
 export default function Home() {
   usePageTitle(
-    'Hagmarkers Entreprenad AB | Entreprenad och Markarbete – Jönköping',
-    'Vi på Hagmarkers Entreprenad AB utför alla typer av entreprenad-, mark-, betong-, pool- och anläggningsarbeten i Jönköping med omnejd. Kontakta oss för en kostnadsfri offert!'
+    'JH Huskvalitet AB | Entreprenad och Huskvalitet – Uppland',
+    'Vi på JH Huskvalitet AB utför alla typer av entreprenad-, mark-, bygg- och anläggningsarbeten i Uppland med omnejd. Kontakta oss för en kostnadsfri offert!'
   );
 
   const heroBgRef = useRef<HTMLDivElement>(null);
@@ -120,22 +119,13 @@ export default function Home() {
           }}
         >
           <video
-            ref={(el) => {
-              heroVideoRef.current = el;
-              if (el) {
-                el.muted = true;
-                el.defaultMuted = true;
-                el.playsInline = true;
-              }
-            }}
+            ref={heroVideoRef}
             src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260812_231416_315184a1-35fa-411b-b0de-8487aec45acc.mp4"
             preload="auto"
             autoPlay
             loop
             muted
             playsInline
-            // @ts-expect-error webkit-playsinline for iOS
-            webkit-playsinline="true"
             style={{
               width: '100%',
               height: '100%',
@@ -177,7 +167,7 @@ export default function Home() {
                 display: 'block',
                 marginBottom: '14px',
               }}>
-                JÖNKÖPING • HABO • MULLSJÖ • BANKERYD
+                UPPLAND MED OMNEJD
               </span>
             </ScrollReveal>
 
@@ -194,7 +184,7 @@ export default function Home() {
                 margin: '0 0 24px 0',
                 textShadow: '0 4px 18px rgba(0, 0, 0, 0.75)',
               }}>
-                HAGMARKERS<br />ENTREPRENAD<br />AB
+                JH<br />HUSKVALITET<br />AB
               </h1>
             </ScrollReveal>
 
@@ -210,7 +200,7 @@ export default function Home() {
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Din entreprenör i Jönköping — vi utför allt inom markentreprenad, grundläggning, dränering, betong och tomtplanering med hantverk som syns i varje detalj.
+                Din partner i Uppland — vi utför allt inom markentreprenad, grundläggning, bygg, dränering och tomtplanering med hantverk som syns i varje detalj.
               </p>
             </ScrollReveal>
 
@@ -229,7 +219,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  href="tel:0726441723"
+                  href="tel:0722101075"
                   onClick={(e) => {
                     if (window.innerWidth > 768) {
                       e.preventDefault();
@@ -239,7 +229,7 @@ export default function Home() {
                 >
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                     <Phone size={18} />
-                    Ring 072-644 17 23
+                    Ring 072-210 10 75
                   </span>
                 </Button>
               </div>
@@ -330,7 +320,7 @@ export default function Home() {
             gap: '60px',
             alignItems: 'center',
           }}>
-            {/* Left: Video Showcase (Replacing Logo) */}
+            {/* Left: Company Logo Card */}
             <ScrollReveal animation="fade-left" duration={0.8}>
               <div style={{
                 position: 'relative',
@@ -339,27 +329,25 @@ export default function Home() {
                 margin: '0 auto',
                 borderRadius: '24px',
                 overflow: 'hidden',
-                boxShadow: '0 20px 40px rgba(15, 23, 42, 0.22)',
-                border: '3px solid rgba(234, 88, 12, 0.2)',
-                background: '#0f172a',
+                boxShadow: '0 12px 36px rgba(15, 23, 42, 0.08)',
+                border: '1px solid #e2e8f0',
+                background: '#ffffff',
                 height: '380px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '36px',
               }}>
                 <img
-                  src="/stabila-grunder.jpg"
-                  alt="Hagmarkers Entreprenad AB markentreprenad och stabila grunder"
+                  src="/logo.jpg"
+                  alt="JH Huskvalitet AB Logotyp"
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
+                    objectFit: 'contain',
                     display: 'block',
                   }}
                 />
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(to top, rgba(15, 23, 42, 0.25) 0%, transparent 60%)',
-                  pointerEvents: 'none',
-                }} />
               </div>
             </ScrollReveal>
 
@@ -373,7 +361,7 @@ export default function Home() {
                   lineHeight: 1.2,
                   margin: '0 0 14px 0',
                 }}>
-                  Stabila grunder – för säkra byggprojekt
+                  Personligt engagemang och kvalitet i varje led
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="scale-x-left" delay={200} duration={0.6}>
@@ -386,16 +374,16 @@ export default function Home() {
                   lineHeight: 1.75,
                   margin: '0 0 32px 0',
                 }}>
-                  Hagmarkers Entreprenad AB erbjuder kompletta helhetslösningar inom allt gällande markentreprenad. Vårt erfarna team utför allt från schaktning, dränering och grundläggning till stödmurar, betongarbeten och tomtplanering med Jönköping som utgångspunkt.
+                  Bakom JH Huskvalitet AB står Viktor Johannesson. Vi drivs av en enkel filosofi: personlig kontakt, rak dialog och ett genuint hantverk vi alltid kan stå för. Oavsett om det gäller nybyggnation av småhus, renovering eller en större ombyggnation finns vi vid din sida från första idé till färdigt resultat.
                 </p>
               </ScrollReveal>
               <ScrollReveal animation="fade-right" duration={0.8} delay={200}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
-                    'Bred kompetens från schakt till färdigt hantverk',
-                    'Tydliga fasta priser och möjlighet till ROT-avdrag',
-                    'Erfarna och certifierade yrkesarbetare',
-                    'Modern maskinpark anpassad för alla tomter',
+                    'En och samma personliga kontaktperson genom hela bygget',
+                    'Tydliga avtal, fasta priser och full hjälp med ROT avdrag',
+                    'Yrkesstolt hantverk skräddarsytt efter dina önskemål',
+                    'Lokal närvaro och personlig service i hela Uppland',
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <CheckCircle2 size={24} color="var(--color-primary)" style={{ flexShrink: 0 }} />
@@ -439,7 +427,7 @@ export default function Home() {
                 display: 'block',
                 marginBottom: '10px',
               }}>
-                Våra kärntjänster
+                Vad vi erbjuder
               </span>
               <h2 style={{
                 color: 'var(--color-text-dark)',
@@ -448,7 +436,7 @@ export default function Home() {
                 letterSpacing: '-0.02em',
                 margin: '0 0 16px 0',
               }}>
-                Helhetslösningar inom mark och entreprenad
+                Byggtjänster med fokus på kvalitet
               </h2>
             </ScrollReveal>
             <ScrollReveal animation="scale-x-center" delay={150} duration={0.6}>
@@ -462,7 +450,7 @@ export default function Home() {
                 margin: '0 auto',
                 lineHeight: 1.7,
               }}>
-                Från professionell stensättning och husdränering till trädfällning och altanbyggen i Jönköping med omnejd.
+                Från nybyggnation av småhus och totalentreprenader till renoveringar och ombyggnationer i Uppland med omnejd.
               </p>
             </ScrollReveal>
           </div>
@@ -700,30 +688,30 @@ export default function Home() {
           <div className="reviews-grid">
             {[
               {
-                name: 'Johan Kvist',
-                location: 'Jönköping',
-                text: 'Anlitade Hagmarkers Entreprenad för mark- och grundarbetet inför vårt husbygge i Jönköping. Maskinföraren var otroligt skicklig och noggrann, och allt blev klart snabbare än förväntat. Kan varmt rekommenderas!',
+                name: 'Magnus Lindström',
+                location: 'Uppsala',
+                text: 'Vi anlitade JH Huskvalitet AB för en omfattande utbyggnad och nytt altandäck. Otroligt professionella från första platsbesöket till sista skruven. Hantverkarna höll rent och snyggt varje dag och tidsplanen hölls till punkt och pricka. Kan varmt rekommenderas!',
                 stars: 5,
-                date: 'för 2 veckor sedan',
-                authorSub: 'Lokal guide • 8 omdömen',
+                date: 'för 3 veckor sedan',
+                authorSub: 'Lokal guide • 12 omdömen',
                 avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=120&h=120'
               },
               {
-                name: 'Karin Wallin',
-                location: 'Helsingborg',
-                text: 'Vi behövde hyra en anläggningsmaskin med förare för schaktning och tomtplanering vid stugan. Riktigt bra kommunikation från första kontakt till färdigt jobb, och tomten blev supersnygg.',
+                name: 'Helena Bergqvist',
+                location: 'Enköping',
+                text: 'Riktigt nöjd med hjälpen vi fick vid vår husdränering och grundisolering. Bra dialog hela vägen, tydlig offert utan dolda kostnader och ett mycket noggrant utfört arbete. Känns tryggt inför höstrusket!',
                 stars: 5,
                 date: 'för en månad sedan',
-                authorSub: '5 omdömen',
+                authorSub: '6 omdömen',
                 avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=120&h=120'
               },
               {
-                name: 'Anders Gustavsson',
-                location: 'Lund',
-                text: 'Proffsigt utfört grundarbete för vårt nya garage. Tydlig kalkyl utan konstigheter och tidsplanen hölls till punkt och pricka. Kommer definitivt anlita dem igen för framtida markarbeten.',
+                name: 'Fredrik Söderlund',
+                location: 'Norrtälje',
+                text: 'JH Huskvalitet hjälpte oss med tomtplanering, markarbete och stensättning runt vår nybyggda villa. Otroligt skickliga på att hitta smarta lösningar för nivåskillnaderna på tomten. Resultatet blev över all förväntan.',
                 stars: 5,
                 date: 'för 2 månader sedan',
-                authorSub: 'Lokal guide • 14 omdömen',
+                authorSub: 'Lokal guide • 19 omdömen',
                 avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120&h=120'
               },
             ].map((review, i) => {

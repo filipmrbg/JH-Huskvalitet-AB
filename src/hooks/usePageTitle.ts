@@ -9,7 +9,7 @@ export function usePageTitle(title: string, description?: string) {
     document.title = title;
 
     // 2. Update Description
-    const defaultDesc = "Hagmarkers Entreprenad AB utför alla typer av entreprenad- och markarbeten med Jönköping som utgångspunkt. Kontakta oss för en kostnadsfri offert!";
+    const defaultDesc = "JH Huskvalitet AB utför alla typer av entreprenad- och byggarbeten med Uppland som utgångspunkt. Kontakta oss för en kostnadsfri offert!";
     const activeDesc = description || defaultDesc;
     
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -37,7 +37,7 @@ export function usePageTitle(title: string, description?: string) {
     if (twitterDescription) twitterDescription.setAttribute('content', activeDesc);
 
     // 5. Update Canonical Link
-    const absoluteUrl = `https://hagmarkersentreprenad.se${pathname === '/' ? '' : pathname}`;
+    const absoluteUrl = `https://jhhuskvalitet.se${pathname === '/' ? '' : pathname}`;
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
       canonical.setAttribute('href', absoluteUrl);

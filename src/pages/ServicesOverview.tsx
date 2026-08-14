@@ -14,8 +14,8 @@ const container: React.CSSProperties = {
 
 export default function ServicesOverview() {
   usePageTitle(
-    'Våra Tjänster | Hagmarkers Entreprenad AB – Jönköping',
-    'Utforska våra kärntjänster: Anläggning, Bygg, Dränering och VA samt Skog och Trädfällning i Jönköping med omnejd.'
+    'Våra Tjänster | JH Huskvalitet AB – Uppland',
+    'Utforska våra byggtjänster: Småhusbyggnation, Renovering, Ombyggnation och Totalentreprenad i Uppland med omnejd.'
   );
 
   const { hash } = useLocation();
@@ -84,7 +84,7 @@ export default function ServicesOverview() {
               margin: '20px auto 0',
               lineHeight: 1.65,
             }}>
-              Vi på Hagmarkers Entreprenad AB erbjuder kompletta lösningar för din fastighet i Jönköping med omnejd.
+              Vi på JH Huskvalitet AB erbjuder kompletta lösningar för din fastighet i Uppland med omnejd.
             </p>
           </ScrollReveal>
         </div>

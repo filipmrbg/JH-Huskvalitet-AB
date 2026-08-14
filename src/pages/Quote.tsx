@@ -57,8 +57,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | 
 
 export default function Quote() {
   usePageTitle(
-    'Begär offert | Hagmarkers Entreprenad AB',
-    'Beskriv ditt projekt och begär en kostnadsfri offert för entreprenad- och markarbeten med Jönköping som utgångspunkt.'
+    'Begär offert | JH Huskvalitet AB',
+    'Beskriv ditt projekt och begär en kostnadsfri offert för entreprenad- och byggarbeten med Uppland som utgångspunkt.'
   );
   const [name, setName]       = useState('');
   const [email, setEmail]     = useState('');
@@ -193,10 +193,10 @@ export default function Quote() {
                     onBlur={blurInput}
                   >
                     <option value="">Välj tjänst...</option>
-                    <option value="anlaggning">Anläggning</option>
-                    <option value="bygg">Bygg</option>
-                    <option value="dranering-va">Dränering och VA</option>
-                    <option value="skog">Skog och Trädfällning</option>
+                    <option value="smahusbyggnation">Småhusbyggnation</option>
+                    <option value="renovering">Renovering</option>
+                    <option value="ombyggnation">Ombyggnation</option>
+                    <option value="totalentreprenad">Totalentreprenad</option>
                     <option value="annat">Annat projekt</option>
                   </select>
 

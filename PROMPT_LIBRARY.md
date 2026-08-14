@@ -23,17 +23,15 @@ Scan the entire project and ensure that the correct company information is used 
 Remove any outdated or placeholder company details that may still exist in the template.
 
 Company Name:
-Hagmarkers Entreprenad AB 
-
-
+JH Huskvalitet AB
 
 Location / City:
-Jönköping
+Uppland
 Phone Number:
-0726441723
+072-210 10 75
 
 Email:
-ollehagmarker@icloud.com
+JHHuskvalitet@outlook.com
 
 ```
 
@@ -58,7 +56,7 @@ Important rules:
 4. The logo must also be used as the default preview image when the website is shared on social media platforms (OG image).
 
 Logo Image URL:
-https://i.imgur.com/y50GqQA.png
+https://scontent.fmmx3-1.fna.fbcdn.net/v/t39.30808-6/634476989_122107636611240431_2908585992468745978_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1024&ctp=s1024x1024&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=jqufOUVujasQ7kNvwGZ7uxs&_nc_oc=Adougzd4pxtPxUXdNW9ojqHbrmRBfbUBLxOyOycMNzEKh-WbeFthFn0ekuK2sCd11h4&_nc_zt=23&_nc_ht=scontent.fmmx3-1.fna&_nc_gid=FRSnwH-lvQUP6zF9nKN0Gg&_nc_ss=7b2a8&oh=00_AQHTbpeMWbLaqQ0OVOjKfezJDLPpSy6vScEORZNaNIWkWw&oe=6A84DCDB
 ```
 
 ---
@@ -72,8 +70,9 @@ Use this brick to update the company’s social media links.
 Each link provided here must replace the existing social media links wherever they appear on the website (e.g., Header, Footer, Contact section).
 
 Instagram:
-https://www.instagram.com/mgamarkarbeten/
-```
+https://www.instagram.com/jhhuskvalitetab
+
+Facebook: https://www.facebook.com/profile.php?id=61587212942833#
 ```
 
 ---
@@ -91,7 +90,7 @@ The text should describe the company, what it does, and the main services it pro
 Only update the text content.
 
 About & Services Text:
-[ENTER TEXT HERE]
+JH Huskvalitet AB erbjuder byggtjänster med fokus på kvalitet, noggrannhet och hållbara lösningar. Vi hjälper dig från idé till färdigt resultat med trygghet, struktur och yrkesstolthet i varje steg.
 ```
 
 ---

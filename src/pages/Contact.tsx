@@ -21,8 +21,8 @@ const faqItems = [
     answer: 'Vi brukar återkomma med en offert inom 1–3 arbetsdagar efter platsbesöket, beroende på projektets omfattning.',
   },
   {
-    question: 'Tar ni på er jobb utanför Jönköping?',
-    answer: 'Jönköping är vår utgångspunkt, men vi kan ta uppdrag i närliggande områden vid större projekt. Hör av dig så berättar vi mer.',
+    question: 'Tar ni på er jobb utanför Uppland?',
+    answer: 'Uppland är vår utgångspunkt, men vi kan ta uppdrag i närliggande områden vid större projekt. Hör av dig så berättar vi mer.',
   },
   {
     question: 'Kan jag boka ett platsbesök direkt?',
@@ -57,8 +57,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) 
 
 export default function Contact() {
   usePageTitle(
-    'Kontakta Hagmarkers Entreprenad AB | Offert och Rådgivning',
-    'Hör av dig till Hagmarkers Entreprenad AB för frågor, kostnadsfria platsbesök eller offert gällande ditt nästa entreprenad- och markprojekt med Jönköping som utgångspunkt.'
+    'Kontakta JH Huskvalitet AB | Offert och Rådgivning',
+    'Hör av dig till JH Huskvalitet AB för frågor, kostnadsfria platsbesök eller offert gällande ditt nästa projekt med Uppland som utgångspunkt.'
   );
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -146,12 +146,12 @@ export default function Contact() {
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                       <a
-                        href="tel:0726441723"
+                        href="tel:0722101075"
                         style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                         onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                         onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                       >
-                        072-644 17 23
+                        072-210 10 75
                       </a>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ export default function Contact() {
                       Plats / Utgångspunkt
                     </p>
                     <p style={{ margin: 0, color: 'var(--color-gray-600)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                      Jönköping som utgångspunkt
+                      Uppland som utgångspunkt
                     </p>
                   </div>
                 </div>
@@ -198,12 +198,12 @@ export default function Contact() {
                       E-post
                     </p>
                     <a
-                      href="mailto:ollehagmarker@icloud.com"
+                      href="mailto:JHHuskvalitet@outlook.com"
                       style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                       onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                       onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                     >
-                      ollehagmarker@icloud.com
+                      JHHuskvalitet@outlook.com
                     </a>
                   </div>
                 </div>

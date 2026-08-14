@@ -207,7 +207,7 @@ export default function ServicePage() {
   }, [slug, normalizedSlug]);
 
   usePageTitle(
-    `${service.title} | Hagmarkers Entreprenad AB`,
+    `${service.title} | JH Huskvalitet AB`,
     service.heroText
   );
 
@@ -392,7 +392,7 @@ export default function ServicePage() {
 
             {/* Article Content */}
             <div className="service-content-col">
-              {service.sections.map((section, i) => (
+              {service.sections?.map((section, i) => (
                 <ScrollReveal key={i} animation="fade-up" delay={i * 80}>
                   <div style={{
                     background: '#ffffff',
@@ -628,7 +628,7 @@ export default function ServicePage() {
         <div style={container}>
           <FAQAccordion
             dark={true}
-            items={service.faq}
+            items={service.faq || []}
             title="Vanliga frågor"
             subtitle={`Svar på de vanligaste frågorna vi får om ${service.title.toLowerCase()}. Hör av dig om du inte hittar svaret du söker!`}
             buttonText="Kontakta oss"
