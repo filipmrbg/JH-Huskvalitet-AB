@@ -200,7 +200,7 @@ export default function Home() {
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Din partner i Uppland — vi utför allt inom markentreprenad, grundläggning, bygg, dränering och tomtplanering med hantverk som syns i varje detalj.
+                Ett personligt byggföretag i Uppland med fokus på småhusbyggnation, renovering, ombyggnation och totalentreprenad med kvalitet i varje led.
               </p>
             </ScrollReveal>
 
