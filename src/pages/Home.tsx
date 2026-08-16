@@ -13,6 +13,8 @@ import Button from '../components/Button';
 import CTABanner from '../components/CTABanner';
 import ReviewCard from '../components/ReviewCard';
 import SocialBanner from '../components/SocialBanner';
+import ProjectsGallery from '../components/ProjectsGallery';
+import FAQAccordion from '../components/FAQAccordion';
 import CallModal from '../components/CallModal';
 import { usePageTitle } from '../hooks/usePageTitle';
 import services, { ServiceItem } from '../data/services';
@@ -22,6 +24,29 @@ const container: React.CSSProperties = {
   margin: '0 auto',
   padding: '0 clamp(20px, 5vw, 40px)',
 };
+
+const homeFaqItems = [
+  {
+    question: 'Kostar det något att få en offert?',
+    answer: 'Nej, vi erbjuder alltid kostnadsfria offerter och rådgivning helt utan förbindelser.',
+  },
+  {
+    question: 'Hur fungerar ROT avdraget?',
+    answer: 'Som privatperson har du rätt till ROT avdrag som reducerar arbetskostnaden med 30 %. Vi sköter all administration direkt med Skatteverket och drar av beloppet på din faktura.',
+  },
+  {
+    question: 'Lämnar ni garanti på utfört arbete?',
+    answer: 'Ja, vi arbetar alltid enligt gällande branschregler och lämnar fullständiga garantier på både utfört arbete och material.',
+  },
+  {
+    question: 'Hjälper ni till med både små och stora projekt?',
+    answer: 'Ja, vi åtar oss allt från mindre renoveringar och servicearbeten till mer omfattande nybyggnationer och tillbyggnader.',
+  },
+  {
+    question: 'Hur går processen till från start till mål?',
+    answer: 'Vi inleder med en dialog kring dina önskemål och förutsättningar, tar fram en tydlig offert och sätter en överenskommen tidsplan innan arbetet påbörjas.',
+  },
+];
 
 export default function Home() {
   usePageTitle(
@@ -244,169 +269,7 @@ export default function Home() {
         onClose={() => setIsCallModalOpen(false)}
       />
 
-      {/* ── SECTION 2: THREE STEP PROCESS ───────────────────────── */}
-      <section style={{
-        background: 'linear-gradient(180deg, #f0f7f7 0%, #ffffff 100%)',
-        padding: 'clamp(60px, 8vw, 100px) 0',
-      }}>
-        <div style={container}>
-          <div className="steps-grid-wrapper" style={{
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            gap: '0',
-            textAlign: 'center',
-          }}>
-            {[
-              { icon: Phone, title: 'Ring oss', desc: 'Berätta om ditt projekt, så hjälper vi dig avgöra vad som krävs och vad det kostar.' },
-              { icon: MapPin, title: 'Kostnadsfritt platsbesök', desc: 'Vi besöker er tomt för att mäta höjdskillnader, bedöma marken och ta fram en offert.' },
-              { icon: Hammer, title: 'Vi utför', desc: 'Vi utför arbetet på ett tryggt och professionellt sätt med fokus på kvalitet.' },
-            ].map(({ icon: Icon, title, desc }, i) => (
-              <div key={i} style={{ display: 'contents' }}>
-                <ScrollReveal animation="blur-in" delay={i * 150} duration={0.8}>
-                  <div className="step-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: '1', maxWidth: '280px' }}>
-                    <div style={{
-                      width: '70px',
-                      height: '70px',
-                      background: 'var(--color-primary)',
-                      borderRadius: 'var(--border-radius-md)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '20px',
-                    }}>
-                      <Icon size={28} color="#1a1f2e" />
-                    </div>
-                    <h3 style={{
-                      color: 'var(--color-text-dark)',
-                      fontWeight: 700,
-                      fontSize: '1.1rem',
-                      margin: '0 0 12px 0',
-                    }}>
-                      {title}
-                    </h3>
-                    <p style={{
-                      color: 'var(--color-gray-600)',
-                      fontSize: '0.95rem',
-                      lineHeight: 1.65,
-                      margin: 0,
-                      maxWidth: '260px',
-                    }}>
-                      {desc}
-                    </p>
-                  </div>
-                </ScrollReveal>
-                {i < 2 && (
-                  <div className="step-arrow">
-                    <svg width="65" height="24" viewBox="0 0 65 24" fill="none" stroke="#C4C4C4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75 }}>
-                      <path d="M 5 12 C 20 10, 40 10, 58 11" />
-                      <path d="M 49 5 C 52 8, 56 10, 58 11" />
-                      <path d="M 48 18 C 51 15, 56 12, 58 11" />
-                    </svg>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 3: OM OSS-BLURB ────────────────────────────── */}
-      <section style={{ background: '#f8fafc', padding: 'clamp(60px, 8vw, 100px) 0' }}>
-        <div style={container}>
-          <div className="two-col" style={{
-            display: 'grid',
-            gridTemplateColumns: 'clamp(280px, 35%, 400px) 1fr',
-            gap: '60px',
-            alignItems: 'center',
-          }}>
-            {/* Left: Company Logo Card */}
-            <ScrollReveal animation="fade-left" duration={0.8}>
-              <div style={{
-                position: 'relative',
-                width: '100%',
-                maxWidth: '440px',
-                margin: '0 auto',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                boxShadow: '0 12px 36px rgba(15, 23, 42, 0.08)',
-                border: '1px solid #e2e8f0',
-                background: '#ffffff',
-                height: '380px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '36px',
-              }}>
-                <img
-                  src="/logo.jpg"
-                  alt="JH Huskvalitet AB Logotyp"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'contain',
-                    display: 'block',
-                  }}
-                />
-              </div>
-            </ScrollReveal>
-
-            {/* Right: text */}
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <ScrollReveal animation="fade-right" duration={0.8}>
-                <h2 style={{
-                  color: 'var(--color-text-dark)',
-                  fontWeight: 800,
-                  fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-                  lineHeight: 1.2,
-                  margin: '0 0 14px 0',
-                }}>
-                  Personligt engagemang och kvalitet i varje led
-                </h2>
-              </ScrollReveal>
-              <ScrollReveal animation="scale-x-left" delay={200} duration={0.6}>
-                <span style={{ display: 'block', width: '60px', height: '3px', background: 'var(--color-primary)', borderRadius: '2px', margin: '0 0 24px' }} />
-              </ScrollReveal>
-              <ScrollReveal animation="fade-right" duration={0.8} delay={100}>
-                <p style={{
-                  color: 'var(--color-gray-600)',
-                  fontSize: '1rem',
-                  lineHeight: 1.75,
-                  margin: '0 0 32px 0',
-                }}>
-                  Bakom JH Huskvalitet AB står Viktor Johannesson. Vi drivs av en enkel filosofi: personlig kontakt, rak dialog och ett genuint hantverk vi alltid kan stå för. Oavsett om det gäller nybyggnation av småhus, renovering eller en större ombyggnation finns vi vid din sida från första idé till färdigt resultat.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal animation="fade-right" duration={0.8} delay={200}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  {[
-                    'En och samma personliga kontaktperson genom hela bygget',
-                    'Tydliga avtal, fasta priser och full hjälp med ROT avdrag',
-                    'Yrkesstolt hantverk skräddarsytt efter dina önskemål',
-                    'Lokal närvaro och personlig service i hela Uppland',
-                  ].map((item, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <CheckCircle2 size={24} color="var(--color-primary)" style={{ flexShrink: 0 }} />
-                      <span style={{ color: 'var(--color-text-dark)', fontWeight: 600, fontSize: '0.95rem' }}>
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </ScrollReveal>
-              <ScrollReveal animation="fade-right" duration={0.8} delay={250}>
-                <div style={{ marginTop: '32px' }}>
-                  <Button variant="dark" href="/om-oss">
-                    Läs mer om oss
-                  </Button>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 5: MODERN CLEAN PHOTO CARDS ────────────────────── */}
+      {/* ── SECTION 2: VÅRA TJÄNSTER (MODERN CLEAN PHOTO CARDS) ───── */}
       <section
         id="tjanster"
         style={{
@@ -416,43 +279,67 @@ export default function Home() {
         }}
       >
         <div style={container}>
-          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <ScrollReveal animation="blur-in">
-              <span style={{
-                color: 'var(--color-primary)',
-                fontWeight: 700,
-                fontSize: '0.85rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                display: 'block',
-                marginBottom: '10px',
-              }}>
-                Vad vi erbjuder
-              </span>
-              <h2 style={{
-                color: 'var(--color-text-dark)',
-                fontWeight: 800,
-                fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
-                letterSpacing: '-0.02em',
-                margin: '0 0 16px 0',
-              }}>
-                Byggtjänster med fokus på kvalitet
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="scale-x-center" delay={150} duration={0.6}>
-              <span style={{ display: 'block', width: '50px', height: '3px', background: 'var(--color-primary)', borderRadius: '2px', margin: '0 auto 18px auto' }} />
-            </ScrollReveal>
-            <ScrollReveal animation="fade-up" delay={200}>
-              <p style={{
-                color: 'var(--color-gray-600)',
-                fontSize: '1.05rem',
-                maxWidth: '640px',
-                margin: '0 auto',
-                lineHeight: 1.7,
-              }}>
-                Från nybyggnation av småhus och totalentreprenader till renoveringar och ombyggnationer i Uppland med omnejd.
-              </p>
-            </ScrollReveal>
+          {/* Clean Authentic Split-Header */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            gap: '24px',
+            marginBottom: '44px',
+          }}>
+            <div style={{ maxWidth: '580px' }}>
+              <ScrollReveal animation="fade-right">
+                <span style={{
+                  color: 'var(--color-primary)',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '8px',
+                }}>
+                  Vad vi erbjuder
+                </span>
+                <h2 style={{
+                  color: 'var(--color-text-dark)',
+                  fontWeight: 800,
+                  fontSize: 'clamp(1.9rem, 3.6vw, 2.7rem)',
+                  letterSpacing: '-0.025em',
+                  margin: 0,
+                  lineHeight: 1.18,
+                }}>
+                  Byggtjänster med fokus på kvalitet
+                </h2>
+              </ScrollReveal>
+            </div>
+
+            <div style={{ maxWidth: '420px' }}>
+              <ScrollReveal animation="fade-left" delay={150}>
+                <p style={{
+                  color: 'var(--color-gray-600)',
+                  fontSize: '1rem',
+                  lineHeight: 1.65,
+                  margin: '0 0 12px 0',
+                }}>
+                  Från nybyggnation av småhus och totalentreprenader till renoveringar och ombyggnationer i Uppland med omnejd.
+                </p>
+                <Link
+                  to="/tjanster"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--color-primary)',
+                    fontWeight: 700,
+                    fontSize: '0.92rem',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Utforska alla tjänster <ArrowRight size={16} />
+                </Link>
+              </ScrollReveal>
+            </div>
           </div>
 
           {/* Clean Modern Photo Grid */}
@@ -566,23 +453,232 @@ export default function Home() {
         </div>
       </section>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .services-accordion-grid {
-            grid-template-columns: 1fr !important;
-            gap: 36px !important;
-          }
-        }
-      `}</style>
+      {/* ── SECTION 3: DIN LOKALA BYGGFIRMA / OM OSS ─────────────── */}
+      <section style={{ background: '#ffffff', padding: 'clamp(60px, 8vw, 100px) 0', borderTop: '1px solid #e2e8f0' }}>
+        <div style={container}>
+          <div className="two-col" style={{
+            display: 'grid',
+            gridTemplateColumns: 'clamp(280px, 35%, 400px) 1fr',
+            gap: '60px',
+            alignItems: 'center',
+          }}>
+            {/* Left: Company Logo Card */}
+            <ScrollReveal animation="fade-left" duration={0.8}>
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                maxWidth: '440px',
+                margin: '0 auto',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                boxShadow: '0 12px 36px rgba(15, 23, 42, 0.08)',
+                border: '1px solid #e2e8f0',
+                background: '#ffffff',
+                height: '380px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '36px',
+              }}>
+                <img
+                  src="/logo.jpg"
+                  alt="JH Huskvalitet AB Logotyp"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                />
+              </div>
+            </ScrollReveal>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .services-accordion-grid {
-            grid-template-columns: 1fr !important;
-            gap: 32px !important;
-          }
-        }
-      `}</style>
+            {/* Right: text */}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <ScrollReveal animation="fade-right" duration={0.8}>
+                <h2 style={{
+                  color: 'var(--color-text-dark)',
+                  fontWeight: 800,
+                  fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
+                  lineHeight: 1.2,
+                  margin: '0 0 14px 0',
+                }}>
+                  Din lokala byggfirma i Uppland
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="scale-x-left" delay={200} duration={0.6}>
+                <span style={{ display: 'block', width: '60px', height: '3px', background: 'var(--color-primary)', borderRadius: '2px', margin: '0 0 24px' }} />
+              </ScrollReveal>
+              <ScrollReveal animation="fade-right" duration={0.8} delay={100}>
+                <p style={{
+                  color: 'var(--color-gray-600)',
+                  fontSize: '1rem',
+                  lineHeight: 1.75,
+                  margin: '0 0 32px 0',
+                }}>
+                  Bakom JH Huskvalitet står Viktor Johannesson. Vi tror på rak kommunikation, personlig kontakt och ett noggrant hantverk utan genvägar. Oavsett om du planerar en nybyggnation, tillbyggnad eller renovering finns vi med dig hela vägen från ritning till slutbesiktning.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-right" duration={0.8} delay={200}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {[
+                    'En och samma kontaktperson från start till mål',
+                    'Tydliga offerter, fasta priser och direkt ROT avdrag',
+                    'Noggrant hantverk anpassat efter dina önskemål',
+                    'Lokal närvaro och snabb service i hela Uppland',
+                  ].map((item, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <CheckCircle2 size={24} color="var(--color-primary)" style={{ flexShrink: 0 }} />
+                      <span style={{ color: 'var(--color-text-dark)', fontWeight: 600, fontSize: '0.95rem' }}>
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-right" duration={0.8} delay={250}>
+                <div style={{ marginTop: '32px' }}>
+                  <Button variant="dark" href="/om-oss">
+                    Läs mer om oss
+                  </Button>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: REFERENSER / PROJEKT ──────────────────────── */}
+      <ProjectsGallery />
+
+      {/* ── SECTION 5: HUR DET FUNGERAR (3-STEGS PROCESS MED PILAR) ── */}
+      <section style={{
+        background: '#ffffff',
+        padding: 'clamp(60px, 8vw, 100px) 0',
+        borderTop: '1px solid #e2e8f0',
+      }}>
+        <div style={container}>
+          {/* Clean Authentic Split-Header */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            gap: '24px',
+            marginBottom: '44px',
+          }}>
+            <div style={{ maxWidth: '540px' }}>
+              <ScrollReveal animation="fade-right">
+                <span style={{
+                  color: 'var(--color-primary)',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '8px',
+                }}>
+                  Enkelt & tryggt
+                </span>
+                <h2 style={{
+                  color: 'var(--color-text-dark)',
+                  fontWeight: 800,
+                  fontSize: 'clamp(1.9rem, 3.4vw, 2.6rem)',
+                  letterSpacing: '-0.025em',
+                  margin: 0,
+                  lineHeight: 1.2,
+                }}>
+                  Så går det till från idé till verklighet
+                </h2>
+              </ScrollReveal>
+            </div>
+
+            <div style={{ maxWidth: '420px' }}>
+              <ScrollReveal animation="fade-left" delay={150}>
+                <p style={{
+                  color: 'var(--color-gray-600)',
+                  fontSize: '1rem',
+                  lineHeight: 1.65,
+                  margin: 0,
+                }}>
+                  Från första kontakt till nyckelfärdigt resultat i tre enkla steg med full transparens och trygghet.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+
+          <div className="steps-grid-wrapper" style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            gap: '0',
+            textAlign: 'center',
+          }}>
+            {[
+              {
+                icon: Phone,
+                title: '1. Kontakta oss',
+                desc: 'Berätta om dina planer och idéer. Vi ger kostnadsfri rådgivning och bollar möjligheter för ditt projekt.',
+              },
+              {
+                icon: MapPin,
+                title: '2. Platsbesök & offert',
+                desc: 'Vi går igenom förutsättningarna på plats och tar fram en tydlig offert med fast pris och tidsplan.',
+              },
+              {
+                icon: Hammer,
+                title: '3. Vi bygger',
+                desc: 'Vi utför arbetet enligt överenskommelse med hög kvalitet, full insyn och trygga garantier.',
+              },
+            ].map(({ icon: Icon, title, desc }, i) => (
+              <div key={i} style={{ display: 'contents' }}>
+                <ScrollReveal animation="blur-in" delay={i * 150} duration={0.8}>
+                  <div className="step-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: '1', maxWidth: '280px' }}>
+                    <div style={{
+                      width: '70px',
+                      height: '70px',
+                      background: 'var(--color-primary)',
+                      borderRadius: 'var(--border-radius-md)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '20px',
+                    }}>
+                      <Icon size={28} color="#1a1f2e" />
+                    </div>
+                    <h3 style={{
+                      color: 'var(--color-text-dark)',
+                      fontWeight: 700,
+                      fontSize: '1.15rem',
+                      margin: '0 0 12px 0',
+                    }}>
+                      {title}
+                    </h3>
+                    <p style={{
+                      color: 'var(--color-gray-600)',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.65,
+                      margin: 0,
+                      maxWidth: '260px',
+                    }}>
+                      {desc}
+                    </p>
+                  </div>
+                </ScrollReveal>
+                {i < 2 && (
+                  <div className="step-arrow">
+                    <svg width="65" height="24" viewBox="0 0 65 24" fill="none" stroke="#C4C4C4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.75 }}>
+                      <path d="M 5 12 C 20 10, 40 10, 58 11" />
+                      <path d="M 49 5 C 52 8, 56 10, 58 11" />
+                      <path d="M 48 18 C 51 15, 56 12, 58 11" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── SECTION 6: MID CTA ──────────────────────────────────── */}
       <section style={{
@@ -624,65 +720,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 8: KUNDRECENSIONER ──────────────────────────── */}
+      {/* ── SECTION 7: KUNDRECENSIONER ──────────────────────────── */}
       <section style={{ background: 'var(--color-light)', padding: 'clamp(60px, 8vw, 100px) 0' }}>
         <div style={container}>
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <ScrollReveal animation="fade-up">
-              <p style={{
-                color: 'var(--color-primary)',
-                fontSize: '0.8rem',
-                fontWeight: 700,
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                margin: '0 0 12px 0',
-              }}>
-                Kundrecensioner
-              </p>
-            </ScrollReveal>
-            <ScrollReveal animation="blur-in" delay={50}>
-              <h2 style={{
-                color: 'var(--color-text-dark)',
-                fontWeight: 800,
-                fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
-                margin: '0 0 12px 0',
-                lineHeight: 1.2,
-              }}>
-                Vad säger våra kunder?
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="scale-x-center" delay={200} duration={0.6}>
-              <span style={{ display: 'block', width: '60px', height: '3px', background: 'var(--color-primary)', borderRadius: '2px', margin: '0 auto 24px auto' }} />
-            </ScrollReveal>
+          {/* Clean Authentic Split-Header */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            flexWrap: 'wrap',
+            gap: '24px',
+            marginBottom: '44px',
+          }}>
+            <div>
+              <ScrollReveal animation="fade-right">
+                <span style={{
+                  color: 'var(--color-primary)',
+                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '8px',
+                }}>
+                  Kundomdömen
+                </span>
+                <h2 style={{
+                  color: 'var(--color-text-dark)',
+                  fontWeight: 800,
+                  fontSize: 'clamp(1.9rem, 3.4vw, 2.6rem)',
+                  letterSpacing: '-0.025em',
+                  margin: 0,
+                  lineHeight: 1.2,
+                }}>
+                  Vad säger våra kunder?
+                </h2>
+              </ScrollReveal>
+            </div>
 
-            {/* Simple Google Rating Summary */}
-            <ScrollReveal animation="fade-up" delay={100}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '8px',
-                margin: '0 auto 32px auto',
-                fontSize: '0.9rem',
-                color: '#4b5563',
-                fontWeight: 500,
-                flexWrap: 'wrap',
-              }}>
-                <svg viewBox="0 0 24 24" width="16" height="16" style={{ marginRight: '4px', flexShrink: 0 }}>
-                  <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69a5.74 5.74 0 0 1-2.49 3.77v3.13h4.01c2.34-2.16 3.69-5.32 3.69-8.75z" />
-                  <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-4.01-3.13c-1.11.75-2.53 1.19-3.95 1.19-3.04 0-5.61-2.05-6.53-4.82H1.31v3.23A12 12 0 0 0 12 24z" />
-                  <path fill="#FBBC05" d="M5.47 14.33A7.16 7.16 0 0 1 5 12c0-.8.14-1.58.39-2.33V6.44H1.31A11.96 11.96 0 0 0 0 12c0 2.05.52 4 1.31 5.67l4.16-3.34z" />
-                  <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.22 0 12 0A12 12 0 0 0 1.31 6.44l4.16 3.23a7.18 7.18 0 0 1 6.53-4.92z" />
-                </svg>
-                <span style={{ fontWeight: 700, color: '#111827' }}>4.9 / 5</span>
-                <div style={{ display: 'flex', gap: '1px' }}>
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} size={14} fill="#FBBC05" color="#FBBC05" />
-                  ))}
+            <div>
+              <ScrollReveal animation="fade-left" delay={100}>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  fontSize: '0.92rem',
+                  color: '#4b5563',
+                  fontWeight: 500,
+                  background: '#ffffff',
+                  padding: '10px 18px',
+                  borderRadius: '50px',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 2px 8px rgba(15, 23, 42, 0.04)',
+                }}>
+                  <svg viewBox="0 0 24 24" width="18" height="18" style={{ flexShrink: 0 }}>
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69a5.74 5.74 0 0 1-2.49 3.77v3.13h4.01c2.34-2.16 3.69-5.32 3.69-8.75z" />
+                    <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-4.01-3.13c-1.11.75-2.53 1.19-3.95 1.19-3.04 0-5.61-2.05-6.53-4.82H1.31v3.23A12 12 0 0 0 12 24z" />
+                    <path fill="#FBBC05" d="M5.47 14.33A7.16 7.16 0 0 1 5 12c0-.8.14-1.58.39-2.33V6.44H1.31A11.96 11.96 0 0 0 0 12c0 2.05.52 4 1.31 5.67l4.16-3.34z" />
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.22 0 12 0A12 12 0 0 0 1.31 6.44l4.16 3.23a7.18 7.18 0 0 1 6.53-4.92z" />
+                  </svg>
+                  <span style={{ fontWeight: 700, color: '#111827' }}>4.9 / 5</span>
+                  <div style={{ display: 'flex', gap: '2px' }}>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} size={15} fill="#FBBC05" color="#FBBC05" />
+                    ))}
+                  </div>
+                  <span style={{ color: 'var(--color-gray-600)', fontSize: '0.85rem' }}>(48 omdömen på Google)</span>
                 </div>
-                <span>baserat på 48 Google-omdömen</span>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
           </div>
 
           <div className="reviews-grid">
@@ -726,10 +832,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SECTION 8: VANLIGA FRÅGOR (FAQ - DARK CONTRAST BREAK) ── */}
+      <section style={{
+        background: '#0f172a',
+        padding: 'clamp(70px, 9vw, 110px) 0',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Subtle decorative glow */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(ellipse at 85% 25%, rgba(234, 88, 12, 0.08) 0%, transparent 60%)',
+          pointerEvents: 'none',
+        }} />
+        <div style={{ ...container, position: 'relative', zIndex: 1 }}>
+          <FAQAccordion
+            items={homeFaqItems}
+            title="Vanliga frågor"
+            subtitle="Här hittar du svar på vanliga funderingar kring offerter, ROT avdrag och hur vi arbetar."
+            buttonText="Kontakta oss direkt"
+            buttonLink="/kontakt"
+            dark={true}
+          />
+        </div>
+      </section>
+
       {/* ── SOCIAL MEDIA BANNER ─────────────────────────────────── */}
       <SocialBanner />
 
-      {/* ── SECTION 11: CTA BANNER ───────────────────────────────── */}
+      {/* ── SECTION 10: CTA BANNER ───────────────────────────────── */}
       <CTABanner />
 
       {/* ── TWEAKED SPACED STYLES ───────────────────────────────── */}

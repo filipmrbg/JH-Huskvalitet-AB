@@ -14,7 +14,7 @@ const container: React.CSSProperties = {
 
 export default function ServicesOverview() {
   usePageTitle(
-    'Våra Tjänster | JH Huskvalitet AB – Uppland',
+    'Våra Tjänster | JH Huskvalitet AB Uppland',
     'Utforska våra byggtjänster: Småhusbyggnation, Renovering, Ombyggnation och Totalentreprenad i Uppland med omnejd.'
   );
 
@@ -69,19 +69,17 @@ export default function ServicesOverview() {
               fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)',
               margin: '0 0 16px 0',
               lineHeight: 1.15,
+              letterSpacing: '-0.03em',
             }}>
               Våra Tjänster
             </h1>
           </ScrollReveal>
-          <ScrollReveal animation="scale-x-center" delay={150} duration={0.6}>
-            <span style={{ display: 'block', width: '60px', height: '3px', background: 'var(--color-primary)', borderRadius: '2px', margin: '14px auto 0' }} />
-          </ScrollReveal>
-          <ScrollReveal animation="fade-up" delay={200}>
+          <ScrollReveal animation="fade-up" delay={150}>
             <p style={{
               color: 'rgba(255,255,255,0.85)',
               fontSize: '1.08rem',
               maxWidth: '640px',
-              margin: '20px auto 0',
+              margin: '0 auto',
               lineHeight: 1.65,
             }}>
               Vi på JH Huskvalitet AB erbjuder kompletta lösningar för din fastighet i Uppland med omnejd.
@@ -200,24 +198,17 @@ export default function ServicesOverview() {
                         color: 'var(--color-text-dark)',
                         fontWeight: 800,
                         fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
+                        letterSpacing: '-0.03em',
                         margin: '0 0 16px 0',
                         lineHeight: 1.2,
                       }}>
                         {svc.title}
                       </h2>
-                      <span style={{
-                        display: 'block',
-                        width: '50px',
-                        height: '3px',
-                        background: 'var(--color-primary)',
-                        borderRadius: '2px',
-                        marginBottom: '20px',
-                      }} />
                       <p style={{
                         color: 'var(--color-gray-600)',
                         fontSize: '1.02rem',
                         lineHeight: 1.75,
-                        margin: '0 0 32px 0',
+                        margin: '0 0 28px 0',
                         whiteSpace: 'pre-line',
                       }}>
                         {svc.detailedDescription}

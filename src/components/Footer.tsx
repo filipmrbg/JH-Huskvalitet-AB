@@ -3,10 +3,10 @@ import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import images from '../data/images';
 
 const serviceLinks = [
-  { label: 'Småhusbyggnation', href: '/tjanster/smahusbyggnation' },
-  { label: 'Renovering', href: '/tjanster/renovering' },
-  { label: 'Ombyggnation', href: '/tjanster/ombyggnation' },
-  { label: 'Totalentreprenad', href: '/tjanster/totalentreprenad' },
+  { label: 'Småhusbyggnation', href: '/tjanster#smahusbyggnation' },
+  { label: 'Renovering', href: '/tjanster#renovering' },
+  { label: 'Ombyggnation', href: '/tjanster#ombyggnation' },
+  { label: 'Totalentreprenad', href: '/tjanster#totalentreprenad' },
 ];
 
 const socialIcons = [

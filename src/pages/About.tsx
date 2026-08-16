@@ -61,7 +61,7 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', margin: '0 auto', maxWidth: '600px' }}>
-                Med passion för kvalitet och hantverk – Med Uppland som hemmaplan.
+                Med passion för kvalitet och hantverk med Uppland som hemmaplan.
               </p>
             </ScrollReveal>
           </div>
@@ -106,23 +106,21 @@ export default function About() {
                 <h2 style={{
                   color: 'var(--color-text-dark)',
                   fontWeight: 800,
-                  fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
-                  lineHeight: 1.2,
-                  margin: '0 0 14px 0',
+                  fontSize: 'clamp(2rem, 3.4vw, 2.7rem)',
+                  lineHeight: 1.18,
+                  letterSpacing: '-0.03em',
+                  margin: '0 0 20px 0',
                 }}>
-                  Vår Historia och Filosofi
+                  Om JH Huskvalitet AB
                 </h2>
               </ScrollReveal>
-              <ScrollReveal animation="scale-x-left" delay={200} duration={0.6}>
-                <span style={{ ...accentLine, margin: '14px 0 0 0' }} />
-              </ScrollReveal>
-              <ScrollReveal animation="fade-up" delay={150}>
-                <div style={{ marginTop: '28px' }}>
+              <ScrollReveal animation="fade-up" delay={100}>
+                <div>
                   <p style={{
                     color: 'var(--color-gray-600)',
                     fontSize: '1.05rem',
                     lineHeight: 1.8,
-                    margin: '0 0 18px 0',
+                    margin: '0 0 20px 0',
                     fontWeight: 500,
                   }}>
                     JH Huskvalitet AB erbjuder byggtjänster med fokus på kvalitet, noggrannhet och hållbara lösningar. Vi hjälper dig från idé till färdigt resultat med trygghet, struktur och yrkesstolthet i varje steg.
@@ -137,7 +135,7 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 16px 0',
                   }}>
-                    Vi utför ett brett utbud av bygg- och entreprenadtjänster med utgångspunkt i Uppland. Oavsett om det gäller renovering, tillbyggnad, anläggning eller nybyggnation ser vi till att projektet genomförs smidigt och med högsta standard.
+                    Vi utför ett brett utbud av bygg och entreprenadtjänster med utgångspunkt i Uppland. Oavsett om det gäller renovering, tillbyggnad, anläggning eller nybyggnation ser vi till att projektet genomförs smidigt och med högsta standard.
                   </p>
                   <p style={{
                     color: 'var(--color-gray-600)',
@@ -172,7 +170,7 @@ export default function About() {
                       fontSize: '0.9rem',
                       display: 'block',
                     }}>
-                      — Viktor Johannesson, Ägare & Grundare
+                      Viktor Johannesson, Ägare och Grundare
                     </span>
                   </div>
 
@@ -193,21 +191,19 @@ export default function About() {
       {/* ── SECTION D: OWNER PROFILE ──────────────────────────── */}
       <section style={{ background: 'var(--color-light)', padding: '90px 0' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 40px)' }}>
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '44px' }}>
             <ScrollReveal animation="blur-in">
               <h2 style={{
                 color: 'var(--color-text-dark)',
                 fontWeight: 800,
-                fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
-                margin: '0 0 14px 0',
+                fontSize: 'clamp(2rem, 3.4vw, 2.6rem)',
+                letterSpacing: '-0.03em',
+                margin: '0 0 12px 0',
               }}>
                 Grundare & Ägare
               </h2>
             </ScrollReveal>
-            <ScrollReveal animation="scale-x-center" delay={200} duration={0.6}>
-              <span style={{ ...accentLine, margin: '14px auto 16px' }} />
-            </ScrollReveal>
-            <ScrollReveal animation="fade-up" delay={150}>
+            <ScrollReveal animation="fade-up" delay={100}>
               <p style={{
                 color: 'var(--color-gray-600)',
                 fontSize: '1rem',

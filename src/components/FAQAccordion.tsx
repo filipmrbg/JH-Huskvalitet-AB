@@ -32,15 +32,16 @@ function AccordionItem({
   return (
     <div
       style={{
-        background: dark ? 'rgba(255,255,255,0.05)' : 'var(--color-white)',
-        borderRadius: 'var(--border-radius-md)',
+        background: dark ? (open ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.04)') : 'var(--color-white)',
+        borderRadius: '12px',
         padding: '22px 28px',
-        marginBottom: '10px',
+        marginBottom: '12px',
         cursor: 'pointer',
-        borderLeft: open ? '3px solid var(--color-primary)' : '3px solid transparent',
+        border: dark ? '1px solid rgba(255,255,255,0.1)' : '1px solid #e2e8f0',
+        borderLeft: open ? '4px solid var(--color-primary)' : (dark ? '1px solid rgba(255,255,255,0.1)' : '4px solid transparent'),
         transform: open ? 'scale(1.01)' : 'scale(1)',
-        transition: 'border-color 0.25s ease, background 0.25s ease, transform 0.25s ease',
-        boxShadow: dark ? 'none' : '0 2px 8px rgba(0,0,0,0.04)',
+        transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        boxShadow: dark ? (open ? '0 8px 24px rgba(0,0,0,0.3)' : 'none') : '0 2px 8px rgba(0,0,0,0.04)',
       }}
       onClick={onToggle}
     >
@@ -54,7 +55,7 @@ function AccordionItem({
           fontFamily: 'var(--font-family)',
           fontWeight: 600,
           fontSize: '1rem',
-          color: dark ? 'var(--color-white)' : 'var(--color-text-dark)',
+          color: dark ? '#ffffff' : 'var(--color-text-dark)',
           lineHeight: 1.4,
         }}>
           {item.question}
@@ -65,7 +66,7 @@ function AccordionItem({
             color: 'var(--color-primary)',
             flexShrink: 0,
             transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
-            transition: 'transform 0.3s ease',
+            transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         />
       </div>
@@ -74,7 +75,7 @@ function AccordionItem({
         style={{
           overflow: 'hidden',
           maxHeight: open ? (contentRef.current?.scrollHeight ?? 500) + 'px' : '0px',
-          transition: 'max-height 0.4s ease',
+          transition: 'max-height 0.35s ease',
         }}
       >
         <div ref={contentRef} style={{ paddingTop: '14px' }}>
@@ -83,7 +84,7 @@ function AccordionItem({
             fontFamily: 'var(--font-family)',
             fontSize: '0.93rem',
             lineHeight: 1.75,
-            color: dark ? 'var(--color-text-light)' : 'var(--color-gray-600)',
+            color: dark ? 'rgba(255, 255, 255, 0.78)' : 'var(--color-gray-600)',
           }}>
             {item.answer}
           </p>
@@ -118,8 +119,8 @@ export default function FAQAccordion({ items, title, subtitle, buttonText, butto
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: '40% 60%',
-        gap: '60px',
+        gridTemplateColumns: '38% 62%',
+        gap: '50px',
         alignItems: 'start',
         fontFamily: 'var(--font-family)',
       }}
@@ -129,21 +130,23 @@ export default function FAQAccordion({ items, title, subtitle, buttonText, butto
       <div>
         {title && (
           <h2 style={{
-            color: dark ? 'var(--color-white)' : 'var(--color-text-dark)',
+            color: dark ? '#ffffff' : 'var(--color-text-dark)',
             fontWeight: 800,
-            fontSize: 'clamp(1.6rem, 2.5vw, 2rem)',
+            fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
+            letterSpacing: '-0.02em',
             lineHeight: 1.2,
-            margin: '0 0 16px 0',
+            margin: '0 0 12px 0',
           }}>
             {title}
           </h2>
         )}
+        <span style={{ display: 'block', width: '50px', height: '3px', background: 'var(--color-primary)', borderRadius: '2px', margin: '0 0 20px' }} />
         {subtitle && (
           <p style={{
-            color: dark ? 'var(--color-text-light)' : 'var(--color-gray-600)',
+            color: dark ? 'rgba(255, 255, 255, 0.75)' : 'var(--color-gray-600)',
             lineHeight: 1.75,
             margin: '0 0 32px 0',
-            fontSize: '0.95rem',
+            fontSize: '1rem',
           }}>
             {subtitle}
           </p>

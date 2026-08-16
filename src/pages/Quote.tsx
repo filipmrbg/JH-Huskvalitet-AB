@@ -14,19 +14,15 @@ const container: React.CSSProperties = {
 const faqItems = [
   {
     question: 'Kostar platsbesöket något?',
-    answer: 'Nej, platsbesök och offert är alltid kostnadsfritt. Vi besöker din fastighet, mäter höjder, kollar markförutsättningar och tar fram ett tydligt prisförslag helt utan förbindelser.',
+    answer: 'Nej, platsbesök och offert är alltid kostnadsfritt. Vi besöker din fastighet, mäter höjder, kollar förutsättningar och tar fram ett tydligt prisförslag helt utan förbindelser.',
   },
   {
-    question: 'Hur snabbt kan ni påbörja grävarbetet?',
-    answer: 'Det styrs av projektets storlek samt vår nuvarande kapacitet och planering. Mindre jobb kan vi ofta påbörja inom två veckor, medan större grundläggningar planeras in med god framförhållning.',
+    question: 'Hur snabbt kan ni påbörja projektet?',
+    answer: 'Det styrs av projektets storlek samt vår nuvarande kapacitet och planering. Mindre jobb kan vi ofta påbörja inom två veckor, medan större projekt planeras in med god framförhållning.',
   },
   {
-    question: 'Hur hanterar ni dolda hinder i marken, som berg?',
-    answer: 'Vid upptäckt av berg eller andra oväntade markhinder diskuterar vi alltid detta direkt med dig. Vi erbjuder bergssprängning eller hydraulisk spräckning som tillägg och håller kostnaderna transparenta.',
-  },
-  {
-    question: 'Fungerar ROT-avdrag för markarbeten?',
-    answer: 'Ja, för arbeten som utförs i nära anslutning till din befintliga bostad, till exempel källardränering eller anslutning av vatten och avlopp. Helt nya husgrunder ger däremot inte rätt till ROT-avdrag.',
+    question: 'Fungerar ROT avdrag för era tjänster?',
+    answer: 'Ja, för godkända renoverings och ombyggnadsarbeten på din bostad drar vi av ROT avdraget på 30 % av arbetskostnaden direkt på fakturan.',
   },
 ];
 
@@ -268,11 +264,11 @@ export default function Quote() {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                     <ShieldCheck size={24} color="var(--color-primary)" />
                     <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: 'var(--color-text-dark)' }}>
-                      ROT-avdrag på fakturan
+                      ROT avdrag på fakturan
                     </h3>
                   </div>
                   <p style={{ margin: 0, color: 'var(--color-gray-600)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                    Vi drar av ROT-avdraget direkt på din faktura när arbetet är berättigat till detta.
+                    Vi drar av ROT avdraget direkt på din faktura när arbetet är berättigat till detta.
                   </p>
                 </div>
 

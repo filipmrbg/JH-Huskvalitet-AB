@@ -13,12 +13,12 @@ const container: React.CSSProperties = {
 
 const faqItems = [
   {
-    question: 'Arbetar ni med ROT-avdrag?',
-    answer: 'Ja, vi hanterar ROT-avdrag och ser till att faktureringen sker korrekt. Arbeten som dränering och inkoppling av VA till befintliga hus berättigar till avdraget.',
+    question: 'Arbetar ni med ROT avdrag?',
+    answer: 'Ja, vi hanterar ROT avdrag och ser till att faktureringen sker korrekt. Arbeten som dränering och inkoppling av VA till befintliga hus berättigar till avdraget.',
   },
   {
     question: 'Hur lång tid tar det att få ett prisförslag?',
-    answer: 'Vi brukar återkomma med en offert inom 1–3 arbetsdagar efter platsbesöket, beroende på projektets omfattning.',
+    answer: 'Vi brukar återkomma med en offert inom 1 till 3 arbetsdagar efter platsbesöket, beroende på projektets omfattning.',
   },
   {
     question: 'Tar ni på er jobb utanför Uppland?',
@@ -310,7 +310,7 @@ export default function Contact() {
             dark={true}
             items={faqItems}
             title="Vanliga frågor"
-            subtitle="Svar på det vi ofta får höra. Hittar du inte svaret – ring oss bara!"
+            subtitle="Svar på det vi ofta får höra. Hittar du inte svaret är du alltid välkommen att ringa oss!"
             buttonText="Skicka meddelande"
             buttonLink="/kontakt"
           />

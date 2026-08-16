@@ -12,7 +12,7 @@ const defaultHeading = 'Begär en kostnadsfri offert';
 const defaultCheckItems = [
   'Kostnadsfritt hembesök och offert',
   'Snabb återkoppling inom 24 timmar',
-  'ROT-avdrag hanteras av oss',
+  'ROT avdrag hanteras av oss',
 ];
 
 export default function CTABanner({ heading = defaultHeading, checkItems = defaultCheckItems }: Props) {
